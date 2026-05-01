@@ -1,15 +1,13 @@
 services:
   app:
-    image: kmenovschikov/em_test:6.0
+    image: kmenovschikov/em_test:app-1.0
     container_name: backend
     networks:
       mynet:
         ipv4_address: 192.168.168.2
   web:
-    image: nginx:latest
+    image: kmenovschikov/em_test:nginx-1.0
     container_name: nginx
-    volumes:
-      - ./nginx/nginx.conf :/etc/nginx/
     ports:
       - 80:80
     networks:
