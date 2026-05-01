@@ -1,0 +1,21 @@
+services:
+  app:
+    image: kmenovschikov/em_test:5.0
+    container_name: backend
+    networks:
+      mynet:
+        ipv4_address: 192.168.168.1
+  web:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    networks:
+      mynet:
+        ipv4_address: 192.168.168.2
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.168.0/24
