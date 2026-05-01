@@ -1,2 +1,2 @@
-with open('example.txt', 'w') as file:
+with open('index.html', 'w') as file:
     file.write('Hello, world!')
