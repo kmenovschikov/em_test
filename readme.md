@@ -1,3 +1,4 @@
+#
 Задание:   
 Используя Docker и Docker Compose поднять:    
 Backend – Python-сервер на http.server, отвечающий на / текстом "Hello from Effective Mobile!".
