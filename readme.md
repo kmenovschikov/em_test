@@ -22,7 +22,7 @@ Backend не публикует порты наружу, доступен тол
         ├── nginx/         
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Dockerfile       
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── nginx.conf   
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── docker-compose.yml       
+   ├── docker-compose.yml       
    ├── .env       
    └── README.md      
      
