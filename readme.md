@@ -1,5 +1,5 @@
 Задание:   
-Используя Docker и Docker Compose поднять:
+Используя Docker и Docker Compose поднять:    
 Backend – Python-сервер на http.server, отвечающий на / текстом "Hello from Effective Mobile!".
 Frontend - Nginx – reverse-proxy, принимает запросы на порту 80 и перенаправляет их на бэкенд.
 
