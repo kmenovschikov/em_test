@@ -1,3 +1,30 @@
+Задание:   
+Используя Docker и Docker Compose поднять:
+Backend – Python-сервер на http.server, отвечающий на / текстом "Hello from Effective Mobile!".
+Frontend - Nginx – reverse-proxy, принимает запросы на порту 80 и перенаправляет их на бэкенд.
+
+Nginx слушает порт, указанный в .env (по умолчанию 80), и принимает входящие запросы.
+В конфигурационном файле nginx/nginx.conf определён upstream backend, который указывает на контейнер backend (имя сервиса в Docker Compose) и порт 8080.
+Все запросы к корневому пути / проксируются на этот upstream с помощью proxy_pass.
+Backend обрабатывает запрос и возвращает строку "Hello from Effective Mobile!".
+Таким образом, клиент взаимодействует только с Nginx, а Nginx прозрачно проксирует трафик к внутреннему сервису.
+Backend-приложение запускается от непривилегированного пользователя appuser (не root).
+Nginx по умолчанию работает от пользователя nginx (не root).
+Backend не публикует порты наружу, доступен только внутри сети Docker.
+
+Структура проекта:
+
+├── backend/ │ 
+    ├── Dockerfile │ 
+    └── app.py 
+├── nginx/ 
+    ├── Dockerfile │
+    └── nginx.conf 
+├── docker-compose.yml 
+├── .env 
+└── README.md
+
+#
 Этапы решения:
 1) Создаем простейший http-сервер - /backend/app.py
 2) Создаем докер-образ с этим сервером - kmenovschikov/em_test:app-1.0
